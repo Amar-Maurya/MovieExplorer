@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCVCell" id="gTV-IL-0wX" customClass="MovieCVCell" customModule="MovieExplorer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="224" height="301"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="224" height="301"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEL-Q5-pVD">
+                        <rect key="frame" x="5" y="0.0" width="214" height="296"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60i-Jv-Y3j">
+                                <rect key="frame" x="0.0" y="0.0" width="214" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="8Qn-bl-adq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4o6-Gt-Stx">
+                                <rect key="frame" x="179" y="12" width="25" height="22"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4o6-Gt-Stx" secondAttribute="height" multiplier="1:1" id="TrV-O5-2pJ"/>
+                                    <constraint firstAttribute="height" constant="25" id="rEZ-1o-cww"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-uA-z9X">
+                                <rect key="frame" x="0.0" y="246" width="214" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="fCn-w3-s9k"/>
+                                </constraints>
+                                <color key="progressTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e9-aF-FDf">
+                                <rect key="frame" x="5" y="252" width="204" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADK-pi-9qH">
+                                <rect key="frame" x="5" y="252" width="204" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4o6-Gt-Stx" firstAttribute="trailing" secondItem="60i-Jv-Y3j" secondAttribute="trailing" constant="-10" id="0jn-I0-Yfn"/>
+                            <constraint firstItem="ADK-pi-9qH" firstAttribute="leading" secondItem="0e9-aF-FDf" secondAttribute="leading" id="1Pu-60-4Hf"/>
+                            <constraint firstItem="60i-Jv-Y3j" firstAttribute="top" secondItem="oEL-Q5-pVD" secondAttribute="top" id="KIT-x9-cR1"/>
+                            <constraint firstItem="1DL-uA-z9X" firstAttribute="bottom" secondItem="60i-Jv-Y3j" secondAttribute="bottom" id="Ocu-6g-omF"/>
+                            <constraint firstItem="ADK-pi-9qH" firstAttribute="trailing" secondItem="0e9-aF-FDf" secondAttribute="trailing" id="UHN-NV-Mvt"/>
+                            <constraint firstItem="1DL-uA-z9X" firstAttribute="leading" secondItem="oEL-Q5-pVD" secondAttribute="leading" id="VYT-8P-3Hd"/>
+                            <constraint firstItem="4o6-Gt-Stx" firstAttribute="top" secondItem="60i-Jv-Y3j" secondAttribute="top" constant="10" id="YIa-5j-K6A"/>
+                            <constraint firstAttribute="trailing" secondItem="1DL-uA-z9X" secondAttribute="trailing" id="bFZ-Pt-DQ9"/>
+                            <constraint firstItem="0e9-aF-FDf" firstAttribute="top" secondItem="60i-Jv-Y3j" secondAttribute="bottom" constant="2" id="bR3-cO-Ziw"/>
+                            <constraint firstAttribute="trailing" secondItem="0e9-aF-FDf" secondAttribute="trailing" constant="5" id="haO-eK-SNw"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ADK-pi-9qH" secondAttribute="bottom" id="iT6-aB-A95"/>
+                            <constraint firstItem="0e9-aF-FDf" firstAttribute="leading" secondItem="oEL-Q5-pVD" secondAttribute="leading" constant="5" id="jQa-QH-9Ut"/>
+                            <constraint firstAttribute="trailing" secondItem="60i-Jv-Y3j" secondAttribute="trailing" id="saK-Zr-EMW"/>
+                            <constraint firstItem="60i-Jv-Y3j" firstAttribute="leading" secondItem="oEL-Q5-pVD" secondAttribute="leading" id="uij-Ya-lXi"/>
+                            <constraint firstItem="ADK-pi-9qH" firstAttribute="top" secondItem="0e9-aF-FDf" secondAttribute="bottom" id="w1B-a5-fSm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="oEL-Q5-pVD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="HSB-oX-aj7"/>
+                <constraint firstItem="oEL-Q5-pVD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UCS-Dx-Q2w"/>
+                <constraint firstAttribute="bottom" secondItem="oEL-Q5-pVD" secondAttribute="bottom" constant="5" id="mtf-eM-eBr"/>
+                <constraint firstAttribute="trailing" secondItem="oEL-Q5-pVD" secondAttribute="trailing" constant="5" id="rt1-xp-Sb7"/>
+            </constraints>
+            <size key="customSize" width="224" height="301"/>
+            <connections>
+                <outlet property="favouriteImageView" destination="4o6-Gt-Stx" id="9xC-XB-crc"/>
+                <outlet property="posterDate" destination="ADK-pi-9qH" id="2Kr-7z-gTg"/>
+                <outlet property="posterImageView" destination="60i-Jv-Y3j" id="RKT-Wl-rgv"/>
+                <outlet property="posterRatingProgress" destination="1DL-uA-z9X" id="3DP-QK-UB8"/>
+                <outlet property="posterTitle" destination="0e9-aF-FDf" id="QoJ-tw-tBl"/>
+            </connections>
+            <point key="canvasLocation" x="247.32824427480915" y="127.11267605633803"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

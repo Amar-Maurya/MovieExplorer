@@ -2,7 +2,7 @@
 //  SearchViewController.swift
 //  Movie Explorer
 //
-//  Created by 2674143 on 26/07/25.
+//  Created by amar maurya on 26/07/25.
 //
 
 import UIKit
@@ -22,6 +22,7 @@ class SearchViewController: UIViewController {
         configureCollectionView()
         configureDataSource()
         addTapGesture()
+        LoaderView.shared.show()
         viewModel.fetchPopularMovies()
     }
 
@@ -51,6 +52,7 @@ extension SearchViewController: MovieListViewModelDelegate {
     func didReceiveMovies() {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
+            LoaderView.shared.hide()
             self.applySnapshot()
             self.noResultsLabel.isHidden = !self.viewModel.isSearching || !self.viewModel.searchResults.isEmpty
             if self.viewModel.isSearching {
@@ -60,7 +62,11 @@ extension SearchViewController: MovieListViewModelDelegate {
     }
 
     func didFailWithError(_ error: Error) {
-        print("Error: \(error)")
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            LoaderView.shared.hide()
+            self.showAlert(message: error.localizedDescription)
+        }
     }
 }
 

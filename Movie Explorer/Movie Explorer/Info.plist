@@ -4,6 +4,8 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>NSUserNotificationUsageDescription</key>
+		<string>We use notifications to alert you when favorites are updated.</string>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

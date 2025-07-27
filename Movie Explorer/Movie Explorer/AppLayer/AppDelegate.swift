@@ -2,16 +2,13 @@
 //  AppDelegate.swift
 //  Movie Explorer
 //
-//  Created by 2674143 on 25/07/25.
+//  Created by amar maurya on 25/07/25.
 //
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -33,4 +30,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

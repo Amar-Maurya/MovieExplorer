@@ -2,7 +2,7 @@
 //  SearchCVCell.swift
 //  MovieExplorer
 //
-//  Created by 2674143 on 27/07/25.
+//  Created by amar maurya on 27/07/25.
 //
 
 import UIKit

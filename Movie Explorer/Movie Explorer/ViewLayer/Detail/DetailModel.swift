@@ -2,23 +2,26 @@
 //  DetailModel.swift
 //  MovieExplorer
 //
-//  Created by 2674143 on 27/07/25.
+//  Created by amar maurya on 27/07/25.
 //
 
-
-
-struct MovieDetailResponse: Decodable {
-    let title: String
+struct MovieDetailResponse: Decodable, Hashable {
+    let id: Int?
+    let title: String?
     let runTime: Int?
     let releaseDate: String?
     let voteAverage: Float?
     let posterPath: String?
     let backdropPath: String?
-    let overview: String
-    let productionCompanies: [ProductionCompany]
-    let genres: [Genre]
+    let overview: String?
+    let productionCompanies: [ProductionCompany]?
+    let genres: [Genre]?
+    var isFavourite: Bool = false
+    var isEditEnable: Bool = false
+    var isSelected: Bool = false
     
     enum CodingKeys: String, CodingKey {
+        case id
         case title
         case runTime = "runtime"
         case releaseDate = "release_date"
@@ -29,6 +32,17 @@ struct MovieDetailResponse: Decodable {
         case productionCompanies = "production_companies"
         case genres
     }
+    
+    static func == (lhs: MovieDetailResponse, rhs: MovieDetailResponse) -> Bool {
+        lhs.id == rhs.id && lhs.isEditEnable == rhs.isEditEnable && lhs.isSelected == rhs.isSelected
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(isEditEnable)
+        hasher.combine(isSelected)
+    }
+    
 }
 
 struct ProductionCompany: Decodable {
@@ -47,6 +61,7 @@ struct Genre: Decodable {
 
 extension MovieDetailResponse {
     init(from object: MovieDetailObject) {
+        self.id = object.id
         self.title = object.title
         self.runTime = object.runTime
         self.releaseDate = object.releaseDate

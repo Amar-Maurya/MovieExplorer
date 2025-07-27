@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Movie Explorer
 //
-//  Created by 2674143 on 25/07/25.
+//  Created by amar maurya on 25/07/25.
 //
 
 import UIKit
@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        LocalNotificationHelper.shared.requestPermission()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

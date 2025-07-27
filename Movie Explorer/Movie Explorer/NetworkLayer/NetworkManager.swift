@@ -2,25 +2,23 @@
 //  NetworkManager.swift
 //  Movie Explorer
 //
-//  Created by 2674143 on 26/07/25.
+//  Created by amar maurya on 26/07/25.
 //
 
 import Foundation
-
-enum NetworkError: Error {
-    case invalidURL
-    case invalidResponse
-    case noData
-    case decodingError(Error)
-    case serverError(Int)
-    case unknown(Error)
-}
+import Alamofire
 
 class NetworkManager {
     
     static let shared = NetworkManager()
     private init() {}
+
+    private let reachabilityManager = NetworkReachabilityManager()
     
+    var isInternetAvailable: Bool {
+        return reachabilityManager?.isReachable ?? false
+    }
+
     func request<T: Decodable>(
         url: String,
         method: String = "GET",
@@ -28,6 +26,12 @@ class NetworkManager {
         headers: [String: String]? = nil,
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {
+        // Check internet first
+        guard isInternetAvailable else {
+            completion(.failure(.noInternet))
+            return
+        }
+
         guard var components = URLComponents(string: url) else {
             completion(.failure(.invalidURL))
             return
@@ -41,12 +45,14 @@ class NetworkManager {
             completion(.failure(.invalidURL))
             return
         }
+
         var request = URLRequest(url: finalURL)
         request.httpMethod = method
         request.allHTTPHeaderFields = [
             APIQueryKeys.accept: APIQueryValues.acceptJsonValue,
             APIQueryKeys.authorization: APIConstants.authorizationToken
         ]
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(.unknown(error)))

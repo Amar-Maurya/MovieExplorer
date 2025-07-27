@@ -2,7 +2,7 @@
 //  MovieListViewController.swift
 //  Movie Explorer
 //
-//  Created by 2674143 on 25/07/25.
+//  Created by amar maurya on 25/07/25.
 //
 
 import UIKit
@@ -55,7 +55,10 @@ extension MovieListViewController: MovieListViewModelDelegate {
     }
     
     func didFailWithError(_ error: Error) {
-        print("Error: \(error)")
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.showAlert(message: error.localizedDescription)
+        }
     }
 }
 

@@ -34,7 +34,7 @@ Includes a shake animation (CAKeyframeAnimation) to draw attention.
 Favorite button auto-updates with red tint as a visual demo.
 
 🧰 Code Architecture
-Clean MVC pattern with modular separation.
+Clean MVVM pattern with modular separation.
 Diffable Data Source used with UICollectionView for efficient UI updates.
 Constants used for managing tokens, keys, and reuse identifiers.
 
